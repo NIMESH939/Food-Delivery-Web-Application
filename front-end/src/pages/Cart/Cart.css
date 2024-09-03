@@ -81,6 +81,9 @@
     outline: none;
     padding-left: 10px;
 }
+.promo-submit-button{
+    cursor: pointer;
+}
 
 .cart-promocode-input button{
     width: max(10vw, 150px);
