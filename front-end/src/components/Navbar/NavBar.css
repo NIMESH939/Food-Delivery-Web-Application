@@ -30,7 +30,7 @@
     border: 1px solid tomato;
     padding: 10px 30px;
     border-radius:  50px;
-    cursor: pointer;
+    cursor: pointer; 
     transition: 0.3s;
 }
 
@@ -58,6 +58,9 @@
     border-radius: 5px;
     top: -8px;
     right: -8px;
+}
+.SearchIconImg {
+    cursor: pointer;
 }
 
 @media (max-width:1050px) {
