@@ -7,7 +7,11 @@ import { StoreContext } from "../../context/StoreContext";
 const NavBar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("Home");
 
-  const { getTotalCartAmount } = useContext(StoreContext);
+  const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
+
+  const logout = () => {
+    
+  };
 
   return (
     <div className="navbar">
@@ -57,7 +61,24 @@ const NavBar = ({ setShowLogin }) => {
           </Link>
           <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
         </div>
-        <button onClick={() => setShowLogin(true)}>Sign In</button>
+        {!token ? (
+          <button onClick={() => setShowLogin(true)}>Sign In</button>
+        ) : (
+          <div className="navbar-profile">
+            <img src={assets.profile_icon} alt="" />
+            <ul className="nav-profile-dropdown">
+              <li>
+                <img src={assets.bag_icon} alt="" />
+                <p>Orders</p>
+              </li>
+              <hr />
+              <li onClick={logout}>
+                <img src={assets.logout_icon} alt="" />
+                <p>Logout</p>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );
